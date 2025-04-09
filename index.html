@@ -1,3 +1,11 @@
-<div class="view-counter"></div><p>&lt; style &gt;   .view-counter {    font-family: “Segoe UI”, Roboto, sans-serif;    padding: 0;    display: inline-flex;    align-items: center;    gap: 8px;    font-size: 14px;    color: #111;    max-width: fit-content;    position: relative;    border: none;    box-shadow: none;    background: transparent;  }  .pulse-wrapper {    position: relative;    width: 16px;    height: 16px;    top: 1px  }  .dot {    width: 8px;    height: 8px;    background: green;    border-radius: 50%;    position: absolute;    top: 4px;    left: 3.8px;    z-index: 2;    animation: dotPulse 0.8s ease-in-out infinite;  }  .pulse-ring {    width: 16px;    height: 16px;    raio da borda: 50%;    plano de fundo: rgba(85, 85, 85, 0,4);    posição: absoluta;    topo: 0;    esquerda: 0;    índice z: 1;    animação: ringPulse 0,9s suavização infinita;  }  @keyframes dotPulse {    0%, 100% { transform: scale(1); opacidade: 1; }    50% { transform: scale(1,3); opacidade: 4; }  }  @keyframes ringPulse {    0% { transform: scale(1); opacidade: 0,8; }    100% { transform: scale(2,2); opacidade: 0; }  } &lt;/ style &gt;</p>
-<p>&lt; script &gt;   document.addEventListener(“DOMContentLoaded”, function () {    const visits = document.getElementById(“visits”);    // Valor aleatório inicial    let count = Math.floor(Math.random() * (81 - 25)) + 25;    visits.textContent = count;    // Atualiza dinamicamente a cada 3 a 6 segundos    setInterval(() =&gt; {      const direction = Math.random() &lt; 0.5 ? -1 : 1; // sobre ou abaixo      const variation = Math.floor(Math.random() * 2) + 1; // 1 ou 2 visitantes      count += direction * variation;      // Limites para não sair do realista      if (count &lt; 20) count = 22;      if (count &gt; 85) count = 83;      visits.textContent = count;    }, Math.floor(Math.random() * 3000) + 3.000); // entre 3s e 6s  }); ​​</p>
+<pre><code>&lt;div class="view-counter"&gt;
+</code></pre>
+  <div class="pulse-wrapper">
+    <span class="dot"></span>
+    <span class="pulse-ring"></span>
+  </div>
+  <span><strong id="visits">37</strong> <strong>pessoas</strong> estão vendo esse produto agora</span>
+
+
+
 
